@@ -12,6 +12,5 @@ namespace Domain.Entities
         public bool Confirmed { get; set; }
 
         public virtual ItemType ItemType { get; set; }
-        public virtual ICollection<BrowserInformation> BrowserInformations { get; set; }
     }
 }

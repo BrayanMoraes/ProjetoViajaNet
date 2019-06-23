@@ -38,6 +38,7 @@ namespace ProjetoViajaNet
 
             services.AddSingleton<IItemFacade, ItemFacade>();
             services.AddSingleton<IItemTypeFacade, ItemTypeFacade>();
+            services.AddSingleton<IBrowserInformationFacade, BrowserInformationFacade>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

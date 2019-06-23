@@ -9,6 +9,7 @@ namespace Infra.UnitOfWork
     {
         IItemRepository ItemRepository { get; }
         IItemTypeRepository ItemTypeRepository { get; }
+        IBrowserInformationRepository BrowserInformationRepository { get; }
         void Commit();
     }
 }

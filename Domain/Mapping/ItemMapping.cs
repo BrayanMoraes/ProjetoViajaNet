@@ -14,7 +14,6 @@ namespace Domain.Mapping
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Quantity).IsRequired();
             builder.HasOne(c => c.ItemType).WithMany(c => c.Items).HasForeignKey(c => c.ItemTypeId);
-            builder.HasMany(c => c.BrowserInformations).WithOne(c => c.Item).HasForeignKey(c => c.ItemId);
         }
     }
 }

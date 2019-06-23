@@ -18,6 +18,7 @@ namespace Infra.UnitOfWork
 
         private ItemRepository _itemRepository;
         private ItemTypeRepository _itemTypeRepository;
+        private BrowserInformationRepository _browserInformationRepository;
 
         public IItemRepository ItemRepository
         {
@@ -42,6 +43,19 @@ namespace Infra.UnitOfWork
                 }
 
                 return this._itemTypeRepository;
+            }
+        }
+
+        public IBrowserInformationRepository BrowserInformationRepository
+        {
+            get
+            {
+                if (this._browserInformationRepository == null)
+                {
+                    this._browserInformationRepository = new BrowserInformationRepository(_context);
+                }
+
+                return this._browserInformationRepository;
             }
         }
 
