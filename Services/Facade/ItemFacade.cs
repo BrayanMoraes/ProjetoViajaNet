@@ -18,17 +18,21 @@ namespace Services.Facade
 
         public void ConfirmItem(int itemId)
         {
-            throw new NotImplementedException();
+            var item = _unitOfWork.ItemRepository.GetItem(itemId);
+            item.Confirmed = true;
+
+            _unitOfWork.Commit();
         }
 
         public void CreateItem(Item item)
         {
-            throw new NotImplementedException();
+            _unitOfWork.ItemRepository.CreateItem(item);
+            _unitOfWork.Commit();
         }
 
         public ICollection<Item> GetAllItems()
         {
-            throw new NotImplementedException();
+            return _unitOfWork.ItemRepository.GetAllItems();
         }
     }
 }

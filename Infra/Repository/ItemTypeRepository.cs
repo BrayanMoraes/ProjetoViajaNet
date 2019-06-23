@@ -3,6 +3,7 @@ using Domain.Entities;
 using Infra.RepositoryInterface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Infra.Repository
@@ -17,7 +18,7 @@ namespace Infra.Repository
         }
         public ICollection<ItemType> GetAllItemTypes()
         {
-            throw new NotImplementedException();
+            return _context.ItemTypes.ToList();
         }
     }
 }

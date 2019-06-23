@@ -18,7 +18,7 @@ namespace Services.Facade
 
         public ICollection<ItemType> GetAllItemTypes()
         {
-            throw new NotImplementedException();
+            return _unitOfWork.ItemTypeRepository.GetAllItemTypes();
         }
     }
 }

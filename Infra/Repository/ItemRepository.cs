@@ -3,6 +3,7 @@ using Domain.Entities;
 using Infra.RepositoryInterface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Infra.Repository
@@ -15,19 +16,19 @@ namespace Infra.Repository
         {
             _context = context;
         }
-        public void ConfirmItem(int itemId)
+        public Item GetItem(int itemId)
         {
-            throw new NotImplementedException();
+            return _context.Items.Find(itemId);
         }
 
         public void CreateItem(Item item)
         {
-            throw new NotImplementedException();
+            _context.Items.Add(item);
         }
 
         public ICollection<Item> GetAllItems()
         {
-            throw new NotImplementedException();
+            return _context.Items.ToList();
         }
     }
 }
