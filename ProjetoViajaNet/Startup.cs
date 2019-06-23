@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Services.Facade;
+using Services.FacadeInterfaces;
 
 namespace ProjetoViajaNet
 {
@@ -33,6 +35,9 @@ namespace ProjetoViajaNet
             var connection = @"Server=DESKTOP-TPSR5NM;Database=ViajaNet;user id=sa;password=q1w2e3r4@;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<ProjectContext>
                 (options => options.UseSqlServer(connection, b => b.MigrationsAssembly("ProjetoViajaNet")));
+
+            services.AddSingleton<IItemFacade, ItemFacade>();
+            services.AddSingleton<IItemTypeFacade, ItemTypeFacade>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
