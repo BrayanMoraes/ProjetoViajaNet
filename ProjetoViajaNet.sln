@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectWeb", "ProjectWeb\ProjectWeb.csproj", "{F5849C54-9913-453C-BA9B-9B351BF400AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robo", "Robo\Robo.csproj", "{402E2695-F954-4386-B5A6-BF662AB93287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robo", "Robo\Robo.csproj", "{402E2695-F954-4386-B5A6-BF662AB93287}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{8311EFAB-74DE-4A05-A9BB-A07E2DD81AB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{8311EFAB-74DE-4A05-A9BB-A07E2DD81AB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

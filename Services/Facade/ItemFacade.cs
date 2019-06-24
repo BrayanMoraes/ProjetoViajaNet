@@ -2,7 +2,7 @@
 using Domain.Entities;
 using Infra.UnitOfWork;
 using Services.FacadeInterfaces;
-using Shared.Log;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.Text;

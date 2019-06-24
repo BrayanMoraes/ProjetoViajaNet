@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Services.Facade;
 using Services.FacadeInterfaces;
-using Shared.Log;
+using Shared;
 using System;
 using System.Collections;
 using System.Collections.Generic;

@@ -2,9 +2,9 @@
 using Domain.Entities;
 using Infra.UnitOfWork;
 using Services.FacadeInterfaces;
+using Shared;
 using System;
 using System.Collections.Generic;
-using Shared.Log;
 using System.Text;
 
 namespace Services.Facade
