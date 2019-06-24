@@ -24,10 +24,12 @@ namespace Services.Facade
             _unitOfWork.Commit();
         }
 
-        public void CreateItem(Item item)
+        public int CreateItem(Item item)
         {
             _unitOfWork.ItemRepository.CreateItem(item);
             _unitOfWork.Commit();
+
+            return item.Id;
         }
 
         public ICollection<Item> GetAllItems()

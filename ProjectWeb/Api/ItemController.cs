@@ -30,16 +30,22 @@ namespace ProjectWeb.Api
         }
 
         [HttpPost]
-        [Route("CreateItem")]
-        public IActionResult CreateItem(Item item)
+        [Route("CreateItem/{typeId}/{quantity}")]
+        public IActionResult CreateItem(int typeId, double quantity)
         {
-            _facade.CreateItem(item);
+            Item item = new Item()
+            {
+                ItemTypeId = typeId,
+                Quantity = quantity
+            };
 
-            return Ok();
+            var id = _facade.CreateItem(item);
+
+            return Ok(id);
         }
 
         [HttpPost]
-        [Route("ConfirmItem")]
+        [Route("ConfirmItem/{id}")]
         public IActionResult ConfirmItem(int id)
         {
             _facade.ConfirmItem(id);

@@ -7,7 +7,7 @@ namespace Services.FacadeInterfaces
 {
     public interface IItemFacade
     {
-        void CreateItem(Item item);
+        int CreateItem(Item item);
         void ConfirmItem(int itemId);
         ICollection<Item> GetAllItems();
     }
