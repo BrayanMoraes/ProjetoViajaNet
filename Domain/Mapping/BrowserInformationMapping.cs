@@ -14,7 +14,7 @@ namespace Domain.Mapping
             builder.HasKey(c => c.Id);
             builder.Property(c => c.BrowserName).HasMaxLength(50).IsRequired();
             builder.Property(c => c.IPAdress).HasMaxLength(15).IsRequired();
-            builder.Property(c => c.PageName).HasMaxLength(50).IsRequired();
+            builder.Property(c => c.PageName).HasMaxLength(50).IsRequired();       
         }
     }
 }

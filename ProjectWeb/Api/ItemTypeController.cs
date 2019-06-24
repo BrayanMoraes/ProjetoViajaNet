@@ -19,6 +19,7 @@ namespace ProjectWeb.Api
         }
 
         [HttpGet]
+        [Route("GetAllItemTypes")]
         public IActionResult GetAllItemTypes()
         {
             var result = _facade.GetAllItemTypes();

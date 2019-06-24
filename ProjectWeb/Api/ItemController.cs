@@ -21,6 +21,7 @@ namespace ProjectWeb.Api
         }
 
         [HttpGet]
+        [Route("GetAllItems")]
         public IActionResult GetAllItems()
         {
             var result = _facade.GetAllItems();
@@ -29,6 +30,7 @@ namespace ProjectWeb.Api
         }
 
         [HttpPost]
+        [Route("CreateItem")]
         public IActionResult CreateItem(Item item)
         {
             _facade.CreateItem(item);
@@ -37,6 +39,7 @@ namespace ProjectWeb.Api
         }
 
         [HttpPost]
+        [Route("ConfirmItem")]
         public IActionResult ConfirmItem(int id)
         {
             _facade.ConfirmItem(id);

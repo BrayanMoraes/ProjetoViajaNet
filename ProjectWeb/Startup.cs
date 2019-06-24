@@ -42,9 +42,12 @@ namespace ProjectWeb
             services.AddDbContext<ProjectContext>
                 (options => options.UseSqlServer(connection, b => b.MigrationsAssembly("ProjetoViajaNet")));
 
-            services.AddSingleton<IItemFacade, ItemFacade>();
-            services.AddSingleton<IItemTypeFacade, ItemTypeFacade>();
-            services.AddSingleton<IBrowserInformationFacade, BrowserInformationFacade>();
+            services.AddScoped<IItemFacade, ItemFacade>();
+            services.AddScoped<IItemTypeFacade, ItemTypeFacade>();
+            services.AddScoped<IBrowserInformationFacade, BrowserInformationFacade>();
+
+            services.AddDetection();
+            services.AddDetectionCore().AddBrowser();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
