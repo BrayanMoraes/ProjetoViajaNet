@@ -40,7 +40,7 @@ namespace ProjectWeb
 
                         var connection = @"Server=DESKTOP-TPSR5NM;Database=ViajaNet;user id=sa;password=q1w2e3r4@;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<ProjectContext>
-                (options => options.UseSqlServer(connection, b => b.MigrationsAssembly("ProjetoViajaNet")));
+                (options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Domain")));
 
             services.AddScoped<IItemFacade, ItemFacade>();
             services.AddScoped<IItemTypeFacade, ItemTypeFacade>();

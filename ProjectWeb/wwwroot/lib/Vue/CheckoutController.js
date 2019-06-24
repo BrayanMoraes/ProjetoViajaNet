@@ -23,6 +23,16 @@
                 });
         },
         createOrder: function () {
+            if (this.order.ItemTypeId == null || this.order.ItemTypeId == 0) {
+                alert('Necessário selecionar um tipo de item');
+                return;
+            }
+
+            if (this.order.Quantity == null || this.order.Quantity == undefined) {
+                alert('Necessário informar quantidade');
+                return;
+            }
+
             let itemTemp = this.order;
             console.log(itemTemp);
             axios.post('/api/Item/CreateItem/' + this.order.ItemTypeId + '/' + this.order.Quantity)
