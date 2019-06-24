@@ -4,6 +4,7 @@ using Infra.UnitOfWork;
 using Services.FacadeInterfaces;
 using System;
 using System.Collections.Generic;
+using Shared.Log;
 using System.Text;
 
 namespace Services.Facade
@@ -18,13 +19,29 @@ namespace Services.Facade
 
         public ICollection<BrowserInformation> GetAll()
         {
-            return _unitOfWork.BrowserInformationRepository.GetAll();
+            try
+            {
+                return _unitOfWork.BrowserInformationRepository.GetAll();
+            }
+            catch(Exception ex)
+            {
+               new ExceptionsLog().SaveExceptionLogs(ex);
+            }
+
+            return null;
         }
 
         public void SaveInformations(BrowserInformation browserInformation)
         {
-            _unitOfWork.BrowserInformationRepository.SaveInformations(browserInformation);
-            _unitOfWork.Commit();
+            try
+            {
+                _unitOfWork.BrowserInformationRepository.SaveInformations(browserInformation);
+                _unitOfWork.Commit();
+            }
+            catch (Exception ex)
+            {
+                new ExceptionsLog().SaveExceptionLogs(ex);
+            }
         }
     }
 }

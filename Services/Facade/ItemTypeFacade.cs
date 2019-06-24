@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Infra.UnitOfWork;
 using Services.FacadeInterfaces;
+using Shared.Log;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +19,16 @@ namespace Services.Facade
 
         public ICollection<ItemType> GetAllItemTypes()
         {
-            return _unitOfWork.ItemTypeRepository.GetAllItemTypes();
+            try
+            {
+                return _unitOfWork.ItemTypeRepository.GetAllItemTypes();
+            }
+            catch (Exception ex)
+            {
+                new ExceptionsLog().SaveExceptionLogs(ex);
+            }
+
+            return null;
         }
     }
 }

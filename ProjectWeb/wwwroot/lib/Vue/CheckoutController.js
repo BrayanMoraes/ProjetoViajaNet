@@ -27,7 +27,10 @@
             console.log(itemTemp);
             axios.post('/api/Item/CreateItem/' + this.order.ItemTypeId + '/' + this.order.Quantity)
                 .then(x => {
-                    window.location.href = '/Home/ConfirmItem/' + x.data;
+                    if (x.data != 0)
+                        window.location.href = '/Home/ConfirmItem/' + x.data;
+                    else
+                        alert("Ocorreu um erro");
                 });
         }
     },

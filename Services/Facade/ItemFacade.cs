@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Infra.UnitOfWork;
 using Services.FacadeInterfaces;
+using Shared.Log;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,23 +19,48 @@ namespace Services.Facade
 
         public void ConfirmItem(int itemId)
         {
-            var item = _unitOfWork.ItemRepository.GetItem(itemId);
-            item.Confirmed = true;
+            try
+            {
+                var item = _unitOfWork.ItemRepository.GetItem(itemId);
+                item.Confirmed = true;
 
-            _unitOfWork.Commit();
+                _unitOfWork.Commit();
+            }
+            catch (Exception ex)
+            {
+                new ExceptionsLog().SaveExceptionLogs(ex);
+            }
         }
 
         public int CreateItem(Item item)
         {
-            _unitOfWork.ItemRepository.CreateItem(item);
-            _unitOfWork.Commit();
+            try
+            {
+                _unitOfWork.ItemRepository.CreateItem(item);
+                _unitOfWork.Commit();
 
-            return item.Id;
+                return item.Id;
+            }
+            catch (Exception ex)
+            {
+                new ExceptionsLog().SaveExceptionLogs(ex);
+            }
+
+            return 0;
         }
 
         public ICollection<Item> GetAllItems()
         {
-            return _unitOfWork.ItemRepository.GetAllItems();
+            try
+            {
+                return _unitOfWork.ItemRepository.GetAllItems();
+            }
+            catch (Exception ex)
+            {
+                new ExceptionsLog().SaveExceptionLogs(ex);
+            }
+
+            return null;
         }
     }
 }

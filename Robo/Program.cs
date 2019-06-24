@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Services.Facade;
 using Services.FacadeInterfaces;
+using Shared.Log;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,7 +60,10 @@ namespace Robo
             catch(Exception ex)
             {
                 Console.WriteLine("Ocorreu um erro" + ex.InnerException);
-            }
+            
+                new ExceptionsLog().SaveExceptionLogs(ex);
+            
+        }
         }
 
         private static void SaveItems(ICollection<Item> items)
