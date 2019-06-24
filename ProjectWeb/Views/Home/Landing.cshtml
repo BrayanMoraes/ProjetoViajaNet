@@ -24,7 +24,10 @@
                         </select>
                     </td>
                     <td>{{it.quantity}}</td>
-                    <td></td>
+                    <td>
+                        <span style="color:red" class="glyphicon glyphicon-remove" v-show="!it.confirmed">Não</span>
+                        <span style="color:green" class="glyphicon glyphicon-ok" v-show="it.confirmed">Sim</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
