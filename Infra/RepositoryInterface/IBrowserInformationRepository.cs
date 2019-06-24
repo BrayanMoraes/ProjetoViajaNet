@@ -8,5 +8,6 @@ namespace Infra.RepositoryInterface
     public interface IBrowserInformationRepository
     {
         void SaveInformations(BrowserInformation browserInformation);
+        ICollection<BrowserInformation> GetAll();
     }
 }

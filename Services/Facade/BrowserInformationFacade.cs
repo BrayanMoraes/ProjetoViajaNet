@@ -15,6 +15,12 @@ namespace Services.Facade
         {
             _unitOfWork = new UnitOfWork(context);
         }
+
+        public ICollection<BrowserInformation> GetAll()
+        {
+            return _unitOfWork.BrowserInformationRepository.GetAll();
+        }
+
         public void SaveInformations(BrowserInformation browserInformation)
         {
             _unitOfWork.BrowserInformationRepository.SaveInformations(browserInformation);

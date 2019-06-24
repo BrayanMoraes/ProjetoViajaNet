@@ -3,6 +3,7 @@ using Domain.Entities;
 using Infra.RepositoryInterface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Infra.Repository
@@ -14,6 +15,12 @@ namespace Infra.Repository
         {
             this._context = context;
         }
+
+        public ICollection<BrowserInformation> GetAll()
+        {
+            return _context.BrowserInformation.ToList();
+        }
+
         public void SaveInformations(BrowserInformation browserInformation)
         {
             _context.BrowserInformation.Add(browserInformation);

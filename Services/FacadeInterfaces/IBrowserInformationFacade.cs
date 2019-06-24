@@ -8,5 +8,6 @@ namespace Services.FacadeInterfaces
     public interface IBrowserInformationFacade
     {
         void SaveInformations(BrowserInformation browserInformation);
+        ICollection<BrowserInformation> GetAll();
     }
 }
